@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Вход через ВК</title>
+</head>
+<body>
+    <a>войти в ВК и разрешить отправку сообщений</a>
+    <button onclick="loginVK()">Войти через ВКонтакте</button>
+
+    <script>
+        function loginVK() {
+            const app_id = '54471047';
+            const redirect_uri = encodeURIComponent('http://212.67.10.161:3000/callback');
+            // Убран scope=offline
+            window.location.href = `https://oauth.vk.com/authorize?client_id=${app_id}&redirect_uri=${redirect_uri}&display=popup&response_type=token&v=5.131`;
+        }
+    </script>
+</body>
+</html>
