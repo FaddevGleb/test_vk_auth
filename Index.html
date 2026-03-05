@@ -15,10 +15,8 @@
 
     <script src="https://vk.com/js/api/openapi.js?169"></script>
     <script>
-        // apiId — ID вашего VK-приложения (https://vk.com/apps?act=manage)
-        // Нужно создать приложение типа "Сайт" и добавить домен в доверенные
-        // Без apiId виджет всё равно работает, но в консоли будет ошибка fastXDM
-        var VK_APP_ID = 54471047; // <-- сюда вставить свой App ID
+    
+        var VK_APP_ID = 54471047;
 
         if (VK_APP_ID) {
             VK.init({ apiId: VK_APP_ID, onlyWidgets: true });
@@ -32,3 +30,4 @@
 
 </body>
 </html>
+
