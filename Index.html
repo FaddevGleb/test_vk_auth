@@ -6,7 +6,17 @@
     <title>VK Community Messages</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { min-height: 100vh; background: #f0f2f5; }
+        body {
+            min-height: 100vh;
+            background: #f0f2f5;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        #vk_community_messages {
+            width: 400px;
+            height: 500px;
+        }
     </style>
 </head>
 <body>
@@ -15,16 +25,11 @@
 
     <script src="https://vk.com/js/api/openapi.js?169"></script>
     <script>
-
-        var VK_APP_ID = 54471047; 
-
-        if (VK_APP_ID) {
-            VK.init({ apiId: VK_APP_ID, onlyWidgets: true });
-        }
+        VK.init({ apiId: 54471047, onlyWidgets: true });
 
         VK.Widgets.CommunityMessages("vk_community_messages", 235927639, {
             tooltipButtonText: "Написать в VK",
-            expanded: 0
+            expanded: 1
         });
     </script>
 
