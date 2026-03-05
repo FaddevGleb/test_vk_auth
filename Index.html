@@ -11,10 +11,9 @@
     <script>
         function loginVK() {
             const app_id = '54471047';
-            // ВАЖНО: Этот адрес должен быть добавлен в "Доверенные Redirect URI" в настройках VK ID
+
             const redirect_uri = 'https://precious-kringle-90c7e4.netlify.app/'; 
             
-            // Добавляем scope=messages (для сообщений) и friends (часто нужно для лички)
             const scope = 'messages,friends,photos'; 
             
             const authUrl = `https://oauth.vk.com/authorize?client_id=${app_id}&redirect_uri=${encodeURIComponent(redirect_uri)}&display=page&scope=${scope}&response_type=token&v=5.131`;
@@ -22,7 +21,6 @@
             window.location.href = authUrl;
         }
 
-        // Функция для получения токена из URL после возврата от VK
         function checkToken() {
             const hash = window.location.hash;
             if (hash.includes('access_token')) {
@@ -31,12 +29,11 @@
                 console.log("Твой токен получен:", token);
                 alert("Успешно! Токен в консоли. Теперь можно отправлять запросы к API.");
                 
-                // Здесь можно вызвать функцию отправки сообщения, используя этот token
             }
         }
 
-        // Проверяем наличие токена при каждой загрузке страницы
         window.onload = checkToken;
     </script>
 </body>
 </html>
+
