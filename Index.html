@@ -14,18 +14,19 @@
     <div id="vk_community_messages"></div>
 
     <script src="https://vk.com/js/api/openapi.js?169"></script>
-<script>
-  VK.Widgets.CommunityMessages(
-    "vk_community_messages",
-    {
-      tooltipButtonText: "Написать в VK",
-      expanded: 0
-    },
-    235927639
-  );
-</script>
+    <script>
+
+        var VK_APP_ID = 54471047; 
+
+        if (VK_APP_ID) {
+            VK.init({ apiId: VK_APP_ID, onlyWidgets: true });
+        }
+
+        VK.Widgets.CommunityMessages("vk_community_messages", 235927639, {
+            tooltipButtonText: "Написать в VK",
+            expanded: 0
+        });
+    </script>
 
 </body>
 </html>
-
-
